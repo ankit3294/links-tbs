@@ -110,3 +110,156 @@
     padding:12px 14px;
     border-radius:14px;
     border:1px solid rgba(10,40,20,0.04);
+    box-shadow:0 6px 18px rgba(20,40,20,0.06);
+    transition:transform .16s cubic-bezier(.24,.94,.6,1), box-shadow .16s;
+    color:#173b2a;
+    font-weight:600;
+    font-size:15px;
+  }
+  a.link:hover{ transform:translateY(-6px); box-shadow:0 18px 36px rgba(7,30,12,0.12) }
+  .icon{
+    min-width:42px;
+    min-height:42px;
+    border-radius:10px;
+    display:grid;
+    place-items:center;
+    font-size:20px;
+    background:linear-gradient(180deg,#e7fff0,#d6f7e3);
+    box-shadow:0 4px 10px rgba(10,30,12,0.06);
+  }
+  .sub{ font-size:12px; color:#496b57; font-weight:500 }
+
+  footer{
+    margin-top:12px;
+    font-size:12px;
+    color:#6b7f6f;
+  }
+
+  .bg-leaves{
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+    overflow:hidden;
+  }
+  .leaf{
+    position:absolute;
+    opacity:.95;
+    filter:drop-shadow(0 6px 12px rgba(10,30,10,0.08));
+    transform-origin:center;
+  }
+  @keyframes float1 { 0%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-10px) rotate(3deg)} 100%{transform:translateY(0) rotate(0)} }
+  @keyframes float2 { 0%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-6px) rotate(-3deg)} 100%{transform:translateY(0) rotate(0)} }
+
+  .leaf.l1{ width:160px; left:-20px; top:-30px; animation:float1 6s ease-in-out infinite; }
+  .leaf.l2{ width:120px; right:-20px; top:-10px; animation:float2 5s ease-in-out infinite; }
+  .leaf.l3{ width:200px; left:-50px; bottom:-40px; transform:rotate(10deg); opacity:.7 }
+
+  @media (max-width:420px){
+    .jungle-header{height:140px}
+    .logo-badge{width:80px;height:80px}
+    .mascot{width:98px;height:98px;left:6px;top:2px}
+    a.link{font-size:14px}
+  }
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card" role="main" aria-labelledby="title">
+      <div class="jungle-header" aria-hidden="false">
+        <!-- Mascot SVG (friendly monkey) -->
+        <svg class="mascot" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- tail -->
+          <path d="M160 150 C180 120 200 90 180 70" fill="none" stroke="#7b4b2b" stroke-width="8" stroke-linecap="round" opacity="0.45"/>
+          <!-- body -->
+          <g transform="translate(0,6)">
+            <ellipse cx="110" cy="120" rx="42" ry="50" fill="#c98754"/>
+            <circle cx="110" cy="78" r="36" fill="#c98754"/>
+            <ellipse cx="110" cy="88" rx="28" ry="22" fill="#ffd9b3"/>
+            <!-- eyes -->
+            <circle cx="98" cy="74" r="6" fill="#2b2b2b"/>
+            <circle cx="122" cy="74" r="6" fill="#2b2b2b"/>
+            <!-- smile -->
+            <path d="M96 94 Q110 104 124 94" stroke="#7b4b2b" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- ear left -->
+            <circle cx="74" cy="68" r="16" fill="#c98754"/>
+            <circle cx="76" cy="68" r="8" fill="#ffd9b3"/>
+            <!-- ear right -->
+            <circle cx="146" cy="68" r="16" fill="#c98754"/>
+            <circle cx="144" cy="68" r="8" fill="#ffd9b3"/>
+            <!-- leaf hat -->
+            <path d="M78 48 C92 36 118 36 132 48 C122 44 98 44 78 48 Z" fill="#56b776" opacity="0.95"/>
+          </g>
+        </svg>
+
+        <!-- Inline SVG logo badge (monogram "TBS") -->
+        <div class="logo-badge" aria-hidden="false" title="TBS Studio logo">
+          <svg width="56" height="56" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="lg" x1="0" x2="1">
+                <stop offset="0" stop-color="#6fd686"/>
+                <stop offset="1" stop-color="#3aa76d"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="100" height="100" rx="18" fill="url(#lg)"/>
+            <text x="50" y="60" font-family="Fredoka One, Arial" font-size="46" text-anchor="middle" fill="#ffffff">TBS</text>
+          </svg>
+        </div>
+      </div>
+
+      <h1 id="title">TBS Studio — Jungle Links</h1>
+      <p class="desc">Welcome to our playful jungle! Tap a button to explore.</p>
+
+      <nav>
+        <ul class="links" aria-label="TBS links">
+          <li>
+            <a class="link" href="http://www.tbs.studio" target="_blank" rel="noopener">
+              <span class="icon" aria-hidden>🌐</span>
+              <div>
+                Website<br><span class="sub">tbs.studio</span>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a class="link" href="http://instagram.com/tbs.studiogram" target="_blank" rel="noopener">
+              <span class="icon" aria-hidden>📸</span>
+              <div>
+                Instagram<br><span class="sub">@tbs.studiogram</span>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a class="link" href="http://facebook.com/thebabystation" target="_blank" rel="noopener">
+              <span class="icon" aria-hidden>👍</span>
+              <div>
+                Facebook<br><span class="sub">The Baby Station</span>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a class="link" href="https://spotify.link/jqp4cyg4SXb" target="_blank" rel="noopener">
+              <span class="icon" aria-hidden>🎧</span>
+              <div>
+                Spotify<br><span class="sub">Our playlist</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <footer>Made with ❤️ for kids — TBS Studio</footer>
+
+      <!-- decorative SVG leaves / animals floating -->
+      <div class="bg-leaves" aria-hidden="true">
+        <svg class="leaf l1" viewBox="0 0 200 200"><path fill="#6bd08a" d="M100 0 C150 20 180 70 160 110 C140 150 90 180 50 160 C10 140 0 80 30 40 C60 0 90 -10 100 0Z"/></svg>
+        <svg class="leaf l2" viewBox="0 0 200 200"><path fill="#8adca7" d="M100 0 C150 20 180 70 160 110 C140 150 90 180 50 160 C10 140 0 80 30 40 C60 0 90 -10 100 0Z"/></svg>
+        <svg class="leaf l3" viewBox="0 0 240 240"><path fill="#4aa65a" d="M120 0 C170 20 210 80 190 120 C170 160 120 200 70 170 C30 140 10 80 40 40 C70 0 100 -10 120 0Z"/></svg>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
