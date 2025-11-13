@@ -3,70 +3,110 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>TBS Studio — Links</title>
+<title>TBS Studio — Jungle Links</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
-  :root{--bg:#ffffff;--card:#f7f7f8;--accent:#0f62fe;--text:#111}
+  :root{
+    --bg1:#e9fbf1;
+    --bg2:#e6f7ff;
+    --card:#fffef8;
+    --accent:#3aa76d;
+    --accent-2:#f08b3f;
+    --muted:#5d6b6a;
+    --shadow: 0 10px 30px rgba(6,20,10,0.12);
+  }
+  *{box-sizing:border-box}
   html,body{height:100%}
   body{
     margin:0;
-    font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
-    background:linear-gradient(180deg,#fff 0%, #f3f7ff 100%);
-    color:var(--text);
+    font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
+    background: linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 100%);
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:24px;
+    padding:20px;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  .wrap{
+    width:100%;
+    max-width:520px;
+    position:relative;
   }
   .card{
-    width:100%;
-    max-width:420px;
-    background:var(--card);
-    border-radius:16px;
-    box-shadow:0 8px 30px rgba(15,22,39,0.08);
-    padding:20px;
+    position:relative;
+    border-radius:22px;
+    overflow:hidden;
+    background:linear-gradient(180deg,var(--card), #fff);
+    box-shadow:var(--shadow);
+    padding:18px;
     text-align:center;
   }
-  img.logo{width:84px;height:84px;border-radius:12px;object-fit:cover}
-  h1{margin:12px 0 6px;font-size:20px}
-  p.desc{margin:0 0 18px;color:#444;font-size:14px}
-  .links{display:grid;gap:12px;padding:0;margin:0;list-style:none;}
-  .links a{
-    display:block;
+
+  /* header with mascot + logo */
+  .jungle-header{
+    width:100%;
+    height:170px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    margin-bottom:8px;
+  }
+
+  /* inline logo (round badge) */
+  .logo-badge{
+    width:92px;
+    height:92px;
+    border-radius:18px;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(180deg,#ffffff,#fbfff8);
+    border:6px solid rgba(255,255,255,0.95);
+    box-shadow:0 8px 26px rgba(12,38,14,0.12);
+    z-index:5;
+    position:relative;
+  }
+
+  /* mascot container (placed behind/left) */
+  .mascot{
+    position:absolute;
+    left:12px;
+    top:6px;
+    width:120px;
+    height:120px;
+    z-index:2;
+    transform:translateX(-6px);
+  }
+
+  h1{
+    font-family:'Fredoka One',system-ui,Arial;
+    font-size:22px;
+    margin:10px 0 6px;
+    color:#214b2f;
+  }
+  p.desc{
+    margin:0 0 12px;
+    color:var(--muted);
+    font-size:14px;
+  }
+
+  ul.links{
+    list-style:none;
+    padding:10px;
+    margin:0;
+    display:grid;
+    gap:12px;
+  }
+  a.link{
+    display:flex;
+    align-items:center;
+    gap:12px;
     text-decoration:none;
+    background:linear-gradient(180deg,#ffffff,#fbfff8);
     padding:12px 14px;
-    border-radius:12px;
-    background:white;
-    color:var(--text);
-    font-weight:600;
-    box-shadow:0 2px 8px rgba(16,24,40,0.04);
-    border:1px solid rgba(16,24,40,0.03);
-  }
-  .links a.small{font-weight:500;font-size:13px;padding:10px}
-  footer{margin-top:14px;font-size:12px;color:#666}
-  @media (prefers-color-scheme: dark){
-    :root{--bg:#0b1020;--card:#0f1724;--text:#e6eef8}
-    body{background:linear-gradient(180deg,#071026 0%, #061021 100%)}
-    .links a{background:#071428;border-color:rgba(255,255,255,0.03)}
-  }
-</style>
-</head>
-<body>
-  <main class="card" role="main">
-    <!-- If you have a logo, replace src with your logo filename -->
-    <img class="logo" src="https://dummyimage.com/300x300/0f62fe/ffffff&text=TBS" alt="TBS Studio logo" />
-    <h1>TBS Studio</h1>
-    <p class="desc">Quick links — tap any item below</p>
-
-    <nav>
-      <ul class="links" aria-label="TBS links">
-        <li><a class="small" href="http://www.tbs.studio" target="_blank" rel="noopener">🌐 Website — tbs.studio</a></li>
-        <li><a class="small" href="http://instagram.com/tbs.studiogram" target="_blank" rel="noopener">📸 Instagram</a></li>
-        <li><a class="small" href="http://facebook.com/thebabystation" target="_blank" rel="noopener">👍 Facebook</a></li>
-        <li><a class="small" href="https://spotify.link/jqp4cyg4SXb" target="_blank" rel="noopener">🎧 Spotify</a></li>
-      </ul>
-    </nav>
-
-    <footer>Made with ❤️ — TBS Studio</footer>
-  </main>
-</body>
-</html>
+    border-radius:14px;
+    border:1px solid rgba(10,40,20,0.04);
